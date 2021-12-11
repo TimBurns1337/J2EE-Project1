@@ -1,3 +1,9 @@
+//package ProtectionPlan.model;
+//
+//public class claims{
+//
+//}
+
 package ProtectionPlan.model;
 
 public class claims{

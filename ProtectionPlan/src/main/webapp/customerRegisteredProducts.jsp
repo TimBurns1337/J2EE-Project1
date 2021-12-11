@@ -17,7 +17,7 @@
  
 
  <div>
-<h1>List of Users</h1>
+<h1>Products Registered by users</h1>
 
   <%=table %><br><br>
   

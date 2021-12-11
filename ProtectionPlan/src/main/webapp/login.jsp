@@ -8,18 +8,19 @@
 </head>
 <body>
 <div class="container">
-		<form method="POST">
+        <h1>Sign In</h1>
+		<form method="POST" action="ValidateUser">
 			
 				<label for="username">Username</label> <input type="text"
 					 id="user" name="user" placeholder="Enter Username"
-					required />
+					required /><br>
 			
 				<label for="password">Password</label> <input type="password"
 					 id="pass" name="pass"
-					placeholder="Enter Password" />
+					placeholder="Enter Password" /><br>
 					
-		<button type="submit">Login</button>
-			
+		<button type="submit">Login</button><br><br>
+		Have you created an account? <a href="register.jsp">Register</a>	
 		</form>
 	</div>
 </body>

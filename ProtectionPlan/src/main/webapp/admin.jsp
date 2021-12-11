@@ -6,25 +6,15 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
-
-
-<% String table = (String) request.getAttribute("table"); %>
-
 <body>
 
- 
+<h1>Admin</h1><br>
+<a href='userList' > List of users</a><br><br>
+<a href='customerRegisteredProducts' > Registered Products by Users </a><br><br>
+<a href=# > Add Products </a>
 
- 
 
- <div>
-<h1>List of Users</h1>
 
-  <%=table %><br><br>
-  
- 
-  
-
- </div>
 
 </body>
 </html>

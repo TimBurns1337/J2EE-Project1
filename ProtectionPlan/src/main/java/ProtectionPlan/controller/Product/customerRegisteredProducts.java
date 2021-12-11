@@ -1,6 +1,7 @@
 package ProtectionPlan.controller.Product;
 
 import java.io.IOException;
+import java.sql.SQLException;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -9,21 +10,19 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import ProtectionPlan.dbhelper.writeQuery;
-import ProtectionPlan.model.protectionPlan;
-import ProtectionPlan.model.users;
+import ProtectionPlan.dbhelper.readQuery;
 
 /**
- * Servlet implementation class RegisterProductCustomer
+ * Servlet implementation class customerRegisteredProducts
  */
-@WebServlet("/RegisterProductCustomer")
-public class RegisterProductCustomer extends HttpServlet {
+@WebServlet("/customerRegisteredProducts")
+public class customerRegisteredProducts extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public RegisterProductCustomer() {
+    public customerRegisteredProducts() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -33,32 +32,47 @@ public class RegisterProductCustomer extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		doGet(request, response);	}
+		doPost(request, response);}
+	
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		String username = request.getParameter("user");
-		String productName = request.getParameter("productName");
-		String serialNumber = request.getParameter("serialNumber");
-		String purchaseDate = request.getParameter("purchaseDate");
-		//String productID = request.getParameter("productID");
-		
-		protectionPlan pp = new  protectionPlan(username, productName, serialNumber, purchaseDate);
-		
-		writeQuery reg = new  writeQuery();
+readQuery rq = new readQuery();
+
 		
 
-		int result = reg.insertProductToPlan(pp);
+		rq.customerRegisteredProducts();
+
+		String table = "";
+
+		try {
+
+			table = rq.getHTMLTable2();
+
+		} catch (SQLException e) {
+
+			// TODO Auto-generated catch block
+
+			e.printStackTrace();
+
+		}
+
 		
-		String redirectUrl = "/login.jsp";
+
+		request.setAttribute("table", table);
+
+		String redirectUrl = "/customerRegisteredProducts.jsp";
+
+		
 
 		RequestDispatcher dispatcher = request.getRequestDispatcher(redirectUrl);
 
 		dispatcher.forward(request, response);
-		
+
+	}
 	}
 
-}
+

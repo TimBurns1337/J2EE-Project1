@@ -8,36 +8,37 @@
 </head>
 <body>
 	<div class="container">
-		<form method="POST">
+	   <h1>Register</h1>
+		<form method="POST" action="RegisterUser">
 			
 				<label for="username">Username</label> <input type="text"
 					 id="user" name="user" placeholder="Enter Username"
-					required />
+					required /><br>
 			
 				<label for="password">Password</label> <input type="password"
 					 id="pass" name="pass"
-					placeholder="Enter Password" />
+					placeholder="Enter Password" /><br>
 			
 				<label for="cell">Cell Number </label> <input type="text"
 					 id="cell" name="cell"
-					placeholder="Enter Cell Number" />
+					placeholder="Enter Cell Number" /><br>
 			
 				<label for="email">Email</label> <input type="text"
 					 id="email" name="email"
-					placeholder="Enter Email"  />
+					placeholder="Enter Email"  /><br>
 				
 				<label for="name">Name</label> <input type="text"
 					 id="name" name="name"
-					placeholder="Enter Name"  />
+					placeholder="Enter Name"  /><br>
 				
 				<label for="address">Address</label> <textarea name="address" 
-				id= "address" placeholder="Enter Address"> </textarea>
+				id= "address" placeholder="Enter Address"> </textarea><br><br>
 				
-				<label for="role">Role</label>
+				<!-- <label for="role">Role</label>
 				<select name="role" id="role">
   					<option value="admin">Admin</option>
   					<option value="user">User</option>
- 				</select>
+ 				</select> -->
 				<button type="submit">Register</button>
 			
 		</form>
